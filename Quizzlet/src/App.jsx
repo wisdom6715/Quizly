@@ -1,5 +1,5 @@
 import './App.css'
-import Quizz from './pages/CreateQuizz.jsx/Quizz'
+import Quizz from './pages/CreateQuiz/Quizz'
 
 function App() {
 

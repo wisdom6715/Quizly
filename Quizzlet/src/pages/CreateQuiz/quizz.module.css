@@ -151,7 +151,9 @@
 }
 .questionOptions{
     display: flex;
-    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
     margin-top: 2rem;
 }
 .testUtils{
@@ -171,3 +173,4 @@
     width: 100%;
     background-color: red;
 }
+

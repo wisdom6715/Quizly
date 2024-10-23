@@ -1,0 +1,15 @@
+.fillGapContainer{
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.fillGapInput{
+    height: 2rem;    
+    width: 80%;
+    border: none;
+    border-bottom: .1rem dashed grey;
+}
+input:focus{
+    outline: none;
+}

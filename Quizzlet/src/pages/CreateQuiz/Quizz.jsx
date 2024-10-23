@@ -1,6 +1,29 @@
+import { useState } from 'react'
+import FillGap from '../../components/FillGap'
 import MultichoiceOption from '../../components/MultichoiceOption'
+import TrueFalse from '../../components/TrueFalseOption'
 import style from './quizz.module.css'
 export default function Quizz(){
+    const [questionType, setQuestionType] = useState('')
+    const handleSelection = (e) =>{
+        // handle selection of question type
+        setQuestionType(e.target.value)
+    }
+    switch(questionType){
+        case 'Multiple choice':
+            return (
+                <MultichoiceOption />
+            )
+        case 'Fill gap':
+            return (
+                <FillGap />
+            )
+        case 'True or False':
+            return (
+                <TrueFalse />
+            )
+        default:
+    }
     return (
         <div className={style.quizzPageContainer}>
             <div className={style.generalContainer}>
@@ -26,10 +49,11 @@ export default function Quizz(){
                         {/* Quizz Questions creation container */}
                         <div className={style.quizzQuestion}>
                             <div className={style.chooseQuestionType}>
-                                <select name="" id="" className={style.questionType}>
-                                    <option value="">Multiple choice</option>
-                                    <option value="">Fill gap</option>
-                                    <option value="">True or False</option>
+                                <select name="" id="" className={style.questionType} value={questionType} onChange={handleSelection}>
+                                    <option value="">Select question type</option>
+                                    <option value="Multiple choice">Multiple choice</option>
+                                    <option value="Fill gap">Fill gap</option>
+                                    <option value="True or False">True or False</option>
                                 </select>
                                 <label htmlFor="">Required: <input type="checkbox" name="" id="" className={style.requiredTab}/></label>
                             </div>
@@ -46,8 +70,9 @@ export default function Quizz(){
                                 </div>
                                 {/* conditional rendering of type of option component */}
                                 <div className={style.questionOptions}>
-                                    {/* Multichoice/ true/false/ / fill gap component */}
-                                    <MultichoiceOption className={style.multichoiceOptionComponent}/>
+                                    {/* a component to direct users to set question */}
+                                    
+                                    {/* conditional rendering of type of option component */}
                                 </div>
                             </div>
                             {/* Test properties such as time, point per question  */}
