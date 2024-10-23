@@ -1,3 +1,4 @@
+/* the page container */
 .quizzPageContainer{
     width: 100%;
     height: 100vh;
@@ -6,6 +7,8 @@
     align-items: center;
     background-color: rgb(230, 230, 230);
 }
+
+/* all elements container */
 .generalContainer{
     background-color: white;
     border-radius: 20px;
@@ -14,6 +17,7 @@
     display: flex;
     flex-direction: column;
 }
+/* header of the page */
 .HeaderContainer{
     display: flex;
     justify-content: space-between;
@@ -24,11 +28,13 @@
     border-top-left-radius: 20px;
     border-bottom: .1rem solid #dfdfdf;
 }
+/* main questions container */
 .quizzQuestionContainer{
     height: 93%;
     display: grid;
     grid-template-columns: 1.5fr 7.5fr;
 }
+/* side bar showing list of the questions and the total number of questions */
 .quizzListNumber{
     border-bottom-left-radius: 20px;
     border-right: .1rem solid #dfdfdf;
@@ -42,6 +48,7 @@
     flex-direction: row;
     justify-content: space-between;  
 }
+/* lists of all the questions added in the nav bar */
 .quizzLists{
     border-bottom: .1rem solid #dfdfdf;
     display: flex;
@@ -52,6 +59,7 @@
     overflow-x: hidden;
     scrollbar-width: thin;
 }
+/* styles of each question element */
 .question{
     border: .1rem solid #dfdfdf;
     height: 15%;
@@ -61,6 +69,7 @@
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }
+/* style applied to element to create message upon taking the test or quiz*/
 .resultMessage{
     margin-top: 1rem;
     height: 10%;
@@ -71,6 +80,7 @@
     border-bottom-right-radius: 10px;
     border-bottom-left-radius: 10px;
 }
+/* the container in which the question itself is created */
 .quizzCreationContainer{
     border-bottom-right-radius: 20px;
     display: flex;
@@ -79,15 +89,85 @@
     align-items: center;
     gap: 1rem;
 }
+/* styles for question about to be created */
 .quizzQuestion{
     width: 80%;
     height: 80%;
     border-radius: 15px;
     border: .1rem solid #dfdfdf;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 7% 86% 7%;
 }
 .addQuestionBtn{
     padding: .5rem 1rem;
     background-color: black;
     color: white;
     border: none;
+}
+.inputContainer{
+    display: flex;
+    flex-direction: column;
+}
+.questionInputContainer{
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    height: 8rem;
+    gap: 1rem;
+}
+.chooseQuestionType{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: .1rem solid #dfdfdf;
+    padding-bottom: 1rem;
+}
+.questionNumbering{
+    display: flex;
+    flex-direction: row;
+    gap: .5rem;
+}
+.inputQuestion{
+    background-color: #dfdfdf;
+    height: 100%;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border: none;
+}
+.addImage{
+    height: 100%;
+    border: .1rem dashed black;
+    background-color: white;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.questionOptions{
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.testUtils{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-top: .1rem solid #dfdfdf;
+    /* margin-top: 22rem; */
+}
+.util{
+    width: 1rem;
+    border: none;
+    background-color: transparent;
+}
+.multichoiceOptionComponent{
+    width: 100%;
+    background-color: red;
 }

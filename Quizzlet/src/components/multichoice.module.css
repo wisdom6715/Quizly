@@ -1,0 +1,17 @@
+.addAnswerBtn{
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    border: .1rem dashed black;
+    background-color: white;
+}
+.OptionContainer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+.option{
+    background-color: grey;
+}
