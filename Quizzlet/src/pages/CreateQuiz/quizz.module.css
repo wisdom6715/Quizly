@@ -164,10 +164,18 @@
     border-top: .1rem solid #dfdfdf;
     /* margin-top: 22rem; */
 }
+.timeInputContainer, .pointInputContainer{
+    display: flex;
+    flex-direction: row;
+    gap: .2rem;
+    background-color: #ecebeb;
+    padding: .2rem;
+}
 .util{
     width: 1rem;
     border: none;
     background-color: transparent;
+    border-right: .1rem solid black;
 }
 .multichoiceOptionComponent{
     width: 100%;

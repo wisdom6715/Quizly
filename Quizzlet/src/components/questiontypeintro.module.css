@@ -1,0 +1,15 @@
+.QuestionTypeIntroContainer{
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.tagImage{
+    height: 20%;
+    width: 30%;
+}
+.stats{
+    margin-bottom: 2rem;
+}

@@ -3,26 +3,33 @@ import FillGap from '../../components/FillGap'
 import MultichoiceOption from '../../components/MultichoiceOption'
 import TrueFalse from '../../components/TrueFalseOption'
 import style from './quizz.module.css'
+import QuestionTypeIntro from '../../components/QuestionTypeIntro'
 export default function Quizz(){
     const [questionType, setQuestionType] = useState('')
     const handleSelection = (e) =>{
         // handle selection of question type
         setQuestionType(e.target.value)
+        console.log(questionType)
     }
-    switch(questionType){
-        case 'Multiple choice':
-            return (
-                <MultichoiceOption />
-            )
-        case 'Fill gap':
-            return (
-                <FillGap />
-            )
-        case 'True or False':
-            return (
-                <TrueFalse />
-            )
-        default:
+    const switchQuestionType = () =>{
+        switch(questionType){
+            case 'Multiple choice':
+                return (
+                    <MultichoiceOption />
+                )
+            case 'Fill gap':
+                return (
+                    <FillGap />
+                )
+            case 'True or False':
+                return (
+                    <TrueFalse />
+                )
+            default:
+                return (
+                    <QuestionTypeIntro />
+                )
+        }
     }
     return (
         <div className={style.quizzPageContainer}>
@@ -50,7 +57,7 @@ export default function Quizz(){
                         <div className={style.quizzQuestion}>
                             <div className={style.chooseQuestionType}>
                                 <select name="" id="" className={style.questionType} value={questionType} onChange={handleSelection}>
-                                    <option value="">Select question type</option>
+                                    <option value="Question intro">Select question type</option>
                                     <option value="Multiple choice">Multiple choice</option>
                                     <option value="Fill gap">Fill gap</option>
                                     <option value="True or False">True or False</option>
@@ -71,17 +78,17 @@ export default function Quizz(){
                                 {/* conditional rendering of type of option component */}
                                 <div className={style.questionOptions}>
                                     {/* a component to direct users to set question */}
-                                    
+                                    {switchQuestionType()}
                                     {/* conditional rendering of type of option component */}
                                 </div>
                             </div>
                             {/* Test properties such as time, point per question  */}
                             <div className={style.testUtils}>
-                                <label htmlFor="">
+                                <label htmlFor="" className={style.timeInputContainer}>
                                     <input type="text" className={style.util}/>
                                     Time
                                 </label>
-                                <label htmlFor="">
+                                <label htmlFor="" className={style.pointInputContainer}>
                                     <input type="text" className={style.util}/>
                                     Points
                                 </label>                                    
